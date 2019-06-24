@@ -15,7 +15,7 @@ import org.jfree.data.time.Minute;
  * @version 2.0
  * @since Release 02 da aplicação
  */
-public class Converter2 {
+public class StrToJFree {
 
     private List l = new ArrayList();
     private List<Day> datas = new ArrayList<Day>();
@@ -78,8 +78,8 @@ public class Converter2 {
         public Builder converterHora() {
             List hh = new ArrayList();
             List dd = new ArrayList();
-            Converter2 data2 = new Converter2.Builder(dado, "data").converter().build();
-            Converter2 hora2 = new Converter2.Builder(dado, "hora").converter().build();
+            StrToJFree data2 = new StrToJFree.Builder(dado, "data").converter().build();
+            StrToJFree hora2 = new StrToJFree.Builder(dado, "hora").converter().build();
             for (int i = 0; i < data2.getL().size(); i++) {
                 dd.add(data2.getL().get(i));
             }
@@ -100,8 +100,8 @@ public class Converter2 {
         public Builder converterMinutos() {
             List hh = new ArrayList();
             List dd = new ArrayList();
-            Converter2 data2 = new Converter2.Builder(dado, "data").converter().build();
-            Converter2 hora2 = new Converter2.Builder(dado, "hora").converter().build();
+            StrToJFree data2 = new StrToJFree.Builder(dado, "data").converter().build();
+            StrToJFree hora2 = new StrToJFree.Builder(dado, "hora").converter().build();
 
             for (int i = 0; i < data2.getL().size(); i++) {
                 dd.add(data2.getL().get(i));
@@ -257,13 +257,13 @@ public class Converter2 {
          * Converter h = new Converter.Builder(dado, "hora").converterHora().build();
          * passados
          */
-        public Converter2 build() {
-            return new Converter2(this);
+        public StrToJFree build() {
+            return new StrToJFree(this);
         }
 
     }
     
-    private Converter2(Builder builder) {
+    private StrToJFree(Builder builder) {
         dado = builder.dado;
         regex = builder.regex;
         l = builder.l;
